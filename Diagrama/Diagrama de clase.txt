@@ -1,0 +1,49 @@
+@startuml
+class Cliente {
+  id_cliente: int
+  nombre: string
+  apellido: string
+  dirección: string
+  dni: string
+  fecha_nac: date
+  nacionalidad: string
+  celular: string
+  email: string
+}
+
+class Empleado extends Cliente {
+  cargo: string
+  sueldo: float
+}
+
+class Servicio {
+  codigo_servicio: string
+  nombre: string
+  descripción_breve: string
+  destino_servicio: string
+  fecha_servicio: date
+  costo_servicio: float
+}
+
+class Paquete {
+  codigo_paquete: string
+  lista_servicios_incluidos: Servicio[]
+  costo_paquete: float
+}
+
+class Venta {
+  num_venta: int
+  fecha_venta: date
+  medio_pago: string
+  cliente: Cliente
+  producto: Servicio | Paquete
+  empleado: Empleado
+}
+
+Cliente "1" -- "*" Venta
+Empleado "1" -- "*" Venta
+Servicio "0..*" -- "1" Paquete
+Venta "1" -- "1" Servicio
+Venta "1" -- "1" Paquete
+
+@enduml
