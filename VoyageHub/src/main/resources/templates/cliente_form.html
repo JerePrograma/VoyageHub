@@ -1,131 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Registro de Usuario</title>
-  </head>
-  <body>
-    <form
-      class="formulario"
-      th:action="@{/cliente/registro}"
-      method="post"
-      enctype="multipart/form-data"
-      style="border-radius: 1.5rem"
+</head>
+<body>
+<form
+        class="formulario"
+        th:action="@{/cliente/registro}"
+        method="post"
+        enctype="multipart/form-data"
+        style="border-radius: 1.5rem"
+>
+    <input type="hidden" id="selectedImagePath" name="selectedImagePath"/>
+    <div
+            th:if="${error != null}"
+            class="card text-white bg-danger mb-3 mensajeError"
     >
-      <input type="hidden" id="selectedImagePath" name="selectedImagePath" />
-      <div
-        th:if="${error != null}"
-        class="card text-white bg-danger mb-3 mensajeError"
-      >
         <div class="card-body">
-          <h5 class="card-title">Error</h5>
-          <p class="card-text" th:text="${error}"></p>
+            <h5 class="card-title">Error</h5>
+            <p class="card-text" th:text="${error}"></p>
         </div>
-      </div>
-      <div
-        th:if="${exito != null}"
-        class="card text-white bg-success mb-3 mensajeExito"
-      >
+    </div>
+    <div
+            th:if="${exito != null}"
+            class="card text-white bg-success mb-3 mensajeExito"
+    >
         <div class="card-body">
-          <h5 class="card-title">Exito!</h5>
-          <p class="card-text" th:text="${exito}"></p>
+            <h5 class="card-title">Exito!</h5>
+            <p class="card-text" th:text="${exito}"></p>
         </div>
-      </div>
-      <h1><span class="badge badge-info">Regístrate</span></h1>
+    </div>
+    <h1><span class="badge badge-info">Regístrate</span></h1>
 
-      <div class="form-row align-items-center"></div>
-      <div class="row" id="nombre">
+    <div class="form-row align-items-center"></div>
+    <div class="row" id="nombre">
         <div class="form-group col-md-6">
-          <label class="col-form-label">Nombre</label>
-          <input
-            name="nombre"
-            type="text"
-            class="form-control"
-            placeholder="Ingrese su nombre"
-            th:value="${nombre}"
-          />
+            <label class="col-form-label">Nombre</label>
+            <input name="nombre" type="text" class="form-control" placeholder="Ingrese su nombre"
+                   th:value="${nombre != null ? nombre : ''}" required/>
+
         </div>
         <div class="form-group col-md-6" id="apellido">
-          <label class="col-form-label">Apellido</label>
-          <input
-            name="apellido"
-            type="text"
-            class="form-control"
-            placeholder="Ingrese su apellido"
-            th:value="${apellido}"
-          />
+            <label class="col-form-label">Apellido</label>
+            <input name="apellido" type="text" class="form-control" placeholder="Ingrese su apellido"
+                   th:value="${apellido != null ? apellido : ''}" required/>
+
         </div>
-      </div>
-      <div class="form-group col-md-6">
+    </div>
+    <div class="form-group col-md-6">
         <label class="col-form-label" for="InputEmail1"
-          >Dirección de correo electrónico</label
+        >Dirección de correo electrónico</label
         >
-        <input
-          name="email"
-          type="email"
-          class="form-control"
-          id="InputEmail1"
-          required
-        />
+        <input name="email" type="email" class="form-control" id="InputEmail1" th:value="${email != null ? email : ''}"
+               required/>
+
         <small id="emailHelp" class="form-text text-muted"
-          >Nunca compartiremos con nadie su datos personales.</small
+        >Nunca compartiremos con nadie su datos personales.</small
         >
-      </div>
-      <div class="form-group col-md-6">
+    </div>
+    <div class="form-group col-md-6">
         <label class="col-form-label" for="InputPassword1"
-          >Ingrese su Contraseña</label
+        >Ingrese su Contraseña</label
         >
         <input
-          name="contrasenia"
-          type="password"
-          class="form-control"
-          id="InputPassword1"
-          required
+                name="contrasenia"
+                type="password"
+                class="form-control"
+                id="InputPassword1"
+                required
         />
-      </div>
-      <div class="form-group col-md-6">
+    </div>
+    <div class="form-group col-md-6">
         <label class="col-form-label" for="InputPassword2"
-          >Repita su Contraseña</label
+        >Repita su Contraseña</label
         >
         <input
-          name="contrasenia2"
-          type="password"
-          class="form-control"
-          id="InputPassword2"
-          required
+                name="contrasenia2"
+                type="password"
+                class="form-control"
+                id="InputPassword2"
+                required
         />
-      </div>
-      <div class="form-group col-md-6">
+    </div>
+    <div class="form-group col-md-6">
         <label class="col-form-label">Dirección</label>
-        <input name="direccion" type="text" class="form-control" required />
-      </div>
-      <div class="form-group col-md-6">
+        <input name="direccion" type="text" class="form-control" th:value="${direccion != null ? direccion : ''}"
+               required/>
+
+    </div>
+    <div class="form-group col-md-6">
         <label class="col-form-label">DNI</label>
-        <input name="dni" type="text" class="form-control" required />
-      </div>
-      <div class="form-group col-md-6">
+        <input name="dni" type="text" class="form-control" th:value="${dni != null ? dni : ''}" required/>
+
+    </div>
+    <div class="form-group col-md-6">
         <label class="col-form-label">Fecha de Nacimiento</label>
-        <input name="fechaNac" type="date" class="form-control" required />
-      </div>
-      <div class="form-group col-md-6">
+        <input name="fechaNac" type="date" class="form-control"
+               th:value="${fechaNac != null ? #dates.format(fechaNac, 'yyyy-MM-dd') : ''}" required/>
+
+    </div>
+    <div class="form-group col-md-6">
         <label class="col-form-label">Nacionalidad</label>
-        <input name="nacionalidad" type="text" class="form-control" required />
-      </div>
-      <div class="form-group col-md-6">
+        <input name="nacionalidad" type="text" class="form-control"
+               th:value="${nacionalidad != null ? nacionalidad : ''}" required/>
+
+    </div>
+    <div class="form-group col-md-6">
         <label class="col-form-label">Celular</label>
-        <input name="celular" type="tel" class="form-control" required />
-      </div>
-      <button
-        type="submit"
-        class="btn btn-info col-md-12"
-        style="margin-top: 20px"
-      >
+        <input name="celular" type="tel" class="form-control" th:value="${celular != null ? celular : ''}" required/>
+    </div>
+    <button
+            type="submit"
+            class="btn btn-info col-md-12"
+            style="margin-top: 20px"
+    >
         Enviar Formulario
-      </button>
-      <div style="padding-top: 20px" class="divVolver">
+    </button>
+    <div style="padding-top: 20px" class="divVolver">
         <a th:href="@{/}" class="btn btn-dark my-2">Volver</a>
-      </div>
-    </form>
-  </body>
+    </div>
+</form>
+</body>
 </html>

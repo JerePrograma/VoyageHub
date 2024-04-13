@@ -9,7 +9,13 @@ import java.time.LocalDate;
 @Entity
 @Data
 @NoArgsConstructor
-public class Servicio extends Producto {
+public class Servicio {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long codigoServicio;
+
+    private String nombre;
     private String descripcionBreve;
     private String destinoServicio;
     @Column(columnDefinition = "DATE")
