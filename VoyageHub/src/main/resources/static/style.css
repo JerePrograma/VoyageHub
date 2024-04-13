@@ -4,7 +4,7 @@
     margin: 0;
     font-family: "Nunito Sans", sans-serif;
 }
-main{
+.principal{
     display: flex;
     flex-direction: column;
     background: url(dd92a3cc7229cafc9841e159b679d3e7.jpeg);
@@ -40,4 +40,21 @@ header ul{
     align-items: center;
     gap: 1rem;
     margin-top: 5%;
+}
+
+.cartas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 5rem;
+
+}
+
+.cartas div{
+    background-color: aqua;
+    
+    height: 250px;
+    width: 250px;
 }
