@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/VoyageHub/src/main/resources/static/style.css">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Asegúrate de que la ruta a los archivos estáticos sea relativa al directorio 'static' -->
+    <link rel="stylesheet" th:href="@{/style.css}" />
 
     <title>Agencia</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <H2>La Agencia</H1>
-            <ul>
-                <li><p>La Agencia</p></li>
-                <li><p>Paquetes</p></li>
-                <li><p>Promociones</p></li>
-                <li><p>Blog de viajero</p></li>
-                <li><p>contacto</p></li>
-            </ul>
+      <h1>La Agencia</h1>
+      <ul>
+        <li><p>La Agencia</p></li>
+        <li><p>Paquetes</p></li>
+        <li><p>Promociones</p></li>
+        <li><p>Blog de viajero</p></li>
+        <li><p>Contacto</p></li>
+      </ul>
     </header>
     <main>
-
-    <section class="titulo">
+      <section class="titulo">
         <h1>Viajá para escapar de la rutina</h1>
         <button><p>Consultanos</p></button>
-    </section>
+      </section>
 
-    <section class="buscador">
-        <input type="text" placeholder="¿A donde queres ir ?">
+      <section class="buscador">
+        <input type="text" placeholder="¿A dónde queres ir?" />
         <div>
-        <input type="date" name="" id="">
-        <input type="date" name="" id="">
-    </div>
+          <input type="date" />
+          <input type="date" />
+        </div>
         <button><p>Buscar</p></button>
-
-    </section>
-
-</main>
-</body>
+      </section>
+    </main>
+  </body>
 </html>
