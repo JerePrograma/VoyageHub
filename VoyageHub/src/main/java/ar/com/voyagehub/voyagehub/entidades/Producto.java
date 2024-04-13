@@ -1,10 +1,15 @@
 package ar.com.voyagehub.voyagehub.entidades;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED) // O puedes usar SINGLE_TABLE si prefieres una única tabla con discriminador
+@Inheritance(strategy = InheritanceType.JOINED)
+// O puedes usar SINGLE_TABLE si prefieres una única tabla con discriminador
 @DiscriminatorColumn(name = "tipo_producto")
+@Data
+@NoArgsConstructor
 public abstract class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
