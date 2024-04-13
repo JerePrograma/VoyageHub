@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "empleados")
 @Data
 @NoArgsConstructor
-public class Empleado extends Usuario {
+public class Empleado extends Cliente {
     private String cargo;
     private Float sueldo;
 

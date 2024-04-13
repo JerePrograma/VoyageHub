@@ -11,10 +11,19 @@ import java.time.LocalDate;
 @Table(name = "clientes")
 @Data
 @NoArgsConstructor
-public class Cliente extends Usuario {
+public class Cliente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idUsuario;
+
+    private String nombre;
+    private String apellido;
+    private String email;
+    private String contrasenia;
+    @Enumerated(EnumType.STRING)
+    private Rol rol;
     private String direccion;
     private String dni;
-    @Column(columnDefinition = "DATE")
     private LocalDate fechaNac;
     private String nacionalidad;
     private String celular;
