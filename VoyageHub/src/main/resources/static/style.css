@@ -42,9 +42,15 @@ header ul{
     margin-top: 5%;
 }
 
+.cartasTitulo{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    border: black solid 3px;
+}
+
 .cartas{
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 2rem;
@@ -53,8 +59,20 @@ header ul{
 }
 
 .cartas div{
-    background-color: aqua;
-    
-    height: 250px;
-    width: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    width: 380px;
+    border: solid black 2px;
+}
+
+footer{
+    margin-top: 20%;
+}
+
+footer ul{
+    display: flex;
+    justify-content: center;
+    gap: 2rem ;
+    list-style: none;
 }
