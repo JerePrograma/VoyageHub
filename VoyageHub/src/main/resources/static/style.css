@@ -1,60 +1,76 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: "Nunito Sans", sans-serif;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
 }
-.principal{
-    display: flex;
-    flex-direction: column;
-    background: url(dd92a3cc7229cafc9841e159b679d3e7.jpeg);
-    padding-top: 5%;
-    padding-bottom: 10%;
-
-}
-
-header{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    align-items: center;
+.principal {
+  display: flex;
+  flex-direction: column;
+  background: url(dd92a3cc7229cafc9841e159b679d3e7.jpeg);
+  padding-top: 5%;
+  padding-bottom: 10%;
 }
 
-header ul{
-    display: flex;
-    gap: 3rem;
-    list-style: none;
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
-.titulo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10%;
-    gap: 2rem;
+header ul {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
 }
 
-.buscador{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 5%;
+.titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+  gap: 2rem;
 }
 
-.cartas{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 5rem;
-
+.buscador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 5%;
 }
 
-.cartas div{
-    background-color: aqua;
-    
-    height: 250px;
-    width: 250px;
+.cartasTitulo {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  border: black solid 3px;
+}
+
+.cartas {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.cartas div {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  width: 380px;
+  border: solid black 2px;
+}
+
+footer {
+  margin-top: 20%;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
 }

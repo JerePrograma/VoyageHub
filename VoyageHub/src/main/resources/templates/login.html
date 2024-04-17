@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-<head>
+  <head>
     <title>voyagehub.com.ar - Login</title>
-</head>
-<body>
-<nav></nav>
-<div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-    <!-- Display error messages -->
-    <div th:if="${error != null}" class="alert alert-danger" role="alert">
+  </head>
+  <body>
+    <nav></nav>
+    <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+      <!-- Display error messages -->
+      <div th:if="${error != null}" class="alert alert-danger" role="alert">
         <strong>Error!</strong> <span th:text="${error}"></span>
-    </div>
-    <!-- Display success messages -->
-    <div th:if="${exito != null}" class="alert alert-success" role="alert">
+      </div>
+      <!-- Display success messages -->
+      <div th:if="${exito != null}" class="alert alert-success" role="alert">
         <strong>Exito!</strong> <span th:text="${exito}"></span>
-    </div>
+      </div>
 
-    <form th:action="@{/logincheck}" method="POST">
+      <form th:action="@{/logincheck}" method="POST">
         <div class="form-outline mb-4">
-            <input name="email" type="email" id="form1Example13" class="form-control form-control-lg" required/>
-            <label class="form-label" for="form1Example13">Dirección de correo electrónico</label>
+          <input
+            name="email"
+            type="email"
+            id="form1Example13"
+            class="form-control form-control-lg"
+            required
+          />
+          <label class="form-label" for="form1Example13"
+            >Dirección de correo electrónico</label
+          >
         </div>
         <div class="form-outline mb-4">
-            <input name="contrasenia" type="password" id="form1Example23" class="form-control form-control-lg"
-                   required/>
-            <label class="form-label" for="form1Example23">Contraseña</label>
+          <input
+            name="contrasenia"
+            type="password"
+            id="form1Example23"
+            class="form-control form-control-lg"
+            required
+          />
+          <label class="form-label" for="form1Example23">Contraseña</label>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresa aquí</button>
-    </form>
-</div>
-</body>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">
+          Ingresa aquí
+        </button>
+      </form>
+    </div>
+  </body>
 </html>
