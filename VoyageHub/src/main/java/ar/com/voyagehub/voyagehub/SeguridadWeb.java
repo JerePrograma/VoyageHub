@@ -40,20 +40,19 @@ public class SeguridadWeb {
         http
                 .csrf(AbstractHttpConfigurer::disable)  // Desactivar CSRF para simplificar el ejemplo
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/logincheck", "/css/**", "/js/**", "/img/**", "/**").permitAll()  // Permite acceso a todos estos caminos sin autenticación
-                        .requestMatchers("/admin/**").hasRole("ADMIN")  // Solo los usuarios con rol ADMIN pueden acceder a rutas bajo /admin/**
-                        .anyRequest().authenticated()  // Todas las demás solicitudes requieren que el usuario esté autenticado
+                        .requestMatchers("/login", "/logincheck", "/css/**", "/js/**", "/img/**", "/**").permitAll()
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/logincheck")
                         .usernameParameter("email")
                         .passwordParameter("contrasenia")
-                        .defaultSuccessUrl("/", true)  // Redireccionar a la página principal después del login exitoso
-                        .permitAll())  // Permitir acceso al formulario de login para todos
+                        .defaultSuccessUrl("/", true)
+                        .permitAll())
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/")  // Redireccionar a la página principal después del logout
+                        .logoutSuccessUrl("/")
                         .permitAll());
         return http.build();
     }
