@@ -4,6 +4,7 @@ import ar.com.voyagehub.voyagehub.entidades.Empleado;
 import ar.com.voyagehub.voyagehub.enums.Rol;
 import ar.com.voyagehub.voyagehub.excepciones.MiExcepcion;
 import ar.com.voyagehub.voyagehub.repositorios.ClienteRepositorio;
+
 import ar.com.voyagehub.voyagehub.repositorios.EmpleadoRepositorio;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -49,5 +50,4 @@ public class EmpleadoServicio extends ClienteServicio {
         empleado.setRol(Rol.EMPLEADO);
         empleadoRepositorio.save(empleado);
     }
-
 }
