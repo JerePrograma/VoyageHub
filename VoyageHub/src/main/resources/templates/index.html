@@ -10,22 +10,23 @@
             rel="stylesheet"
     />
     <!-- Asegúrate de que la ruta a los archivos estáticos sea relativa al directorio 'static' -->
-    <link rel="stylesheet" th:href="@{/style.css}" />
-
+    <!--"/VoyageHub/src/main/resources/static/style.css"-->
+    <link rel="stylesheet" href="/VoyageHub/src/main/resources/static/style.css">
     <title>Agencia</title>
   </head>
   <body>
     <header>
       <h1>La Agencia</h1>
       <ul>
-        <li><p>La Agencia</p></li>
-        <li><p>Paquetes</p></li>
-        <li><p>Promociones</p></li>
-        <li><p>Blog de viajero</p></li>
-        <li><p>Contacto</p></li>
+        <li>La Agencia</li>
+        <li>Paquetes</li>
+        <li>Promociones</li>
+        <li><a href="/VoyageHub/src/main/resources/templates/cliente_form.html">Registrate</a></li>
+        <li><a href="/VoyageHub/src/main/resources/templates/login.html">Login</a></li>
       </ul>
     </header>
     <main>
+      
       <article class="principal">
         <section class="titulo">
           <button><p>Consultanos</p></button>
@@ -41,13 +42,26 @@
         </section>
       </article>
 
+      <h2 class="cartasTitulo">DISFRUTÁ NUESTRAS PROMOCIONES</h2>
       <section class="cartas">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div> 
+          <img src="/VoyageHub/src/main/resources/static/1.jpg" alt="">
+          
+        </div>
+        <div><img src="/VoyageHub/src/main/resources/static/2.jpeg" alt=""></div>
+        <div><img src="/VoyageHub/src/main/resources/static/3.jpeg" alt=""></div>
+        <div><img src="/VoyageHub/src/main/resources/static/4.webp" alt=""></div>
+        <div><img src="/VoyageHub/src/main/resources/static/5.avif" alt=""></div>
       </section>
+      <footer>
+        <ul>
+          <li>Terminos y Condiciones</li>
+          <li>Legales</li>
+          <li>Ayuda</li>
+          <li>Contacto</li>
+          <Li>Nosotros</Li>
+        </ul>
+      </footer>
     </main>
   </body>
 </html>
