@@ -9,6 +9,8 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
     />
+    <!-- Asegúrate de que la ruta a los archivos estáticos sea relativa al directorio 'static' -->
+    <!--"/VoyageHub/src/main/resources/static/style.css"-->
     <link rel="stylesheet" th:href="@{/css/style.css}" />
     <title>Agencia</title>
   </head>
@@ -32,14 +34,8 @@
         <li>La Agencia</li>
         <li>Paquetes</li>
         <li>Promociones</li>
-        <li>
-          <a href="/VoyageHub/src/main/resources/templates/cliente_form.html"
-            >Registrate</a
-          >
-        </li>
-        <li>
-          <a href="/VoyageHub/src/main/resources/templates/login.html">Login</a>
-        </li>
+        <li><a th:href="@{/cliente/registrar}">Registrate</a></li>
+        <li><a th:href="@{/login}">Login</a></li>
       </ul>
     </header>
     <main>
