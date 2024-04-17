@@ -37,6 +37,7 @@ public class SeguridadWeb {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/login", "/logincheck").permitAll() // Permite explícitamente estas rutas
                         .requestMatchers("/cliente/registrar", "/cliente/registro").permitAll()
+                        .requestMatchers("/empleado/registrar", "/empleado/registro").permitAll()
                         .requestMatchers("/cliente/**").hasRole("CLIENTE")
                         .requestMatchers("/empleado/**").hasRole("EMPLEADO")
                         .requestMatchers("/admin/**").hasRole("ADMIN")

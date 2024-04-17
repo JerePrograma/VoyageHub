@@ -8,12 +8,13 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "clientes")
 @Data
 @NoArgsConstructor
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Cliente {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_seq")
+    @SequenceGenerator(name = "cliente_seq", sequenceName = "cliente_seq", allocationSize = 1)
     private Long idUsuario;
 
     private String nombre;
@@ -28,4 +29,15 @@ public class Cliente {
     private String nacionalidad;
     private String celular;
 
+    public Cliente(String nombre, String apellido, String email, String contrasenia, String direccion, String dni, LocalDate fechaNac, String nacionalidad, String celular) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.contrasenia = contrasenia;
+        this.direccion = direccion;
+        this.dni = dni;
+        this.fechaNac = fechaNac;
+        this.nacionalidad = nacionalidad;
+        this.celular = celular;
+    }
 }

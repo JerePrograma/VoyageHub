@@ -51,7 +51,7 @@ public class ClienteServicio implements UserDetailsService {
         cliente.setCelular(celular);
         cliente.setNacionalidad(nacionalidad);
         cliente.setDni(dni);
-        cliente.setRol(Rol.ADMIN);
+        cliente.setRol(Rol.CLIENTE);
         clienteRepositorio.save(cliente);
     }
 
@@ -104,7 +104,7 @@ public class ClienteServicio implements UserDetailsService {
         }
     }
 
-    private void validarCadena(String valor, String mensajeError) throws MiExcepcion {
+    void validarCadena(String valor, String mensajeError) throws MiExcepcion {
         if (valor == null || valor.trim().isEmpty()) {
             throw new MiExcepcion(mensajeError);
         }
