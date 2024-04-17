@@ -40,7 +40,7 @@ public class SeguridadWeb {
                         .requestMatchers("/cliente/**").hasRole("CLIENTE")
                         .requestMatchers("/empleado/**").hasRole("EMPLEADO")
                         .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/css/**", "/js/**", "/img/**").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/img/**",  "/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
