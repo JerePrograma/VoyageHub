@@ -1,0 +1,32 @@
+<head th:fragment="head" xmlns:th="http://www.thymeleaf.org">
+    <!-- Título de la página -->
+    <title>Alquileres vacacionales, casas y experiencias</title>
+
+    <!-- Meta viewport para responsividad -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Enlace a Bootstrap -->
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+            integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+            crossorigin="anonymous"
+    />
+
+    <!-- Enlace a Font Awesome -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Hojas de estilo personalizadas -->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/formularios.css}"/>
+
+    <!-- Favicon -->
+    <link
+            rel="icon"
+            type="image/jpeg"
+            th:href="@{/images/1.jpg}"
+    />
+</head>

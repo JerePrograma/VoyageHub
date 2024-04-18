@@ -1,86 +1,89 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<head th:replace="fragments/head :: head"></head>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+            rel="stylesheet"
     />
     <!-- Asegúrate de que la ruta a los archivos estáticos sea relativa al directorio 'static' -->
     <!--"/VoyageHub/src/main/resources/static/style.css"-->
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <title>Agencia</title>
-  </head>
-  <body>
-    <div th:if="${#authorization.expression('isAuthenticated()')}">
-      <p>Bienvenido, <span th:text="${#authentication.getName()}"></span>!</p>
-      <a href="/logout">Cerrar sesión</a>
-    </div>
-    <div th:unless="${#authorization.expression('isAuthenticated()')}">
-      <a href="/login">Iniciar sesión</a>
-    </div>
-    <div th:if="${param.error}">
-      <p>Error al iniciar sesión. Inténtelo de nuevo.</p>
-    </div>
-    <div th:if="${param.logout}">
-      <p>Cierre de sesión exitoso.</p>
-    </div>
-    <header>
-      <h1>La Agencia</h1>
-      <ul>
+</head>
+<body>
+<nav th:replace="fragments/navbar :: nav"></nav>
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <p>Bienvenido, <span th:text="${#authentication.getName()}"></span>!</p>
+    <a href="/logout">Cerrar sesión</a>
+</div>
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <a href="/login">Iniciar sesión</a>
+</div>
+<div th:if="${param.error}">
+    <p>Error al iniciar sesión. Inténtelo de nuevo.</p>
+</div>
+<div th:if="${param.logout}">
+    <p>Cierre de sesión exitoso.</p>
+</div>
+<header>
+    <h1>La Agencia</h1>
+    <ul>
         <li>La Agencia</li>
         <li>Paquetes</li>
         <li>Promociones</li>
         <li><a th:href="@{/cliente/registrar}">Registrate</a></li>
         <li><a th:href="@{/login}">Login</a></li>
-      </ul>
-    </header>
-    <main>
-      <article class="principal">
+    </ul>
+</header>
+<main>
+    <article class="principal">
         <section class="titulo">
-          <button><p>Consultanos</p></button>
+            <button><p>Consultanos</p></button>
         </section>
 
         <section class="buscador">
-          <input type="text" placeholder="¿A dónde queres ir?" />
-          <div>
-            <input type="date" />
-            <input type="date" />
-          </div>
-          <button><p>Buscar</p></button>
+            <input type="text" placeholder="¿A dónde queres ir?"/>
+            <div>
+                <input type="date"/>
+                <input type="date"/>
+            </div>
+            <button><p>Buscar</p></button>
         </section>
-      </article>
+    </article>
 
-      <h2 class="cartasTitulo">DISFRUTÁ NUESTRAS PROMOCIONES</h2>
-      <section class="cartas">
+    <h2 class="cartasTitulo">DISFRUTÁ NUESTRAS PROMOCIONES</h2>
+    <section class="cartas">
         <div>
-          <img src="/VoyageHub/src/main/resources/static/1.jpg" alt="" />
+            <img src="/VoyageHub/src/main/resources/static/1.jpg" alt=""/>
         </div>
         <div>
-          <img src="/VoyageHub/src/main/resources/static/2.jpeg" alt="" />
+            <img src="/VoyageHub/src/main/resources/static/2.jpeg" alt=""/>
         </div>
         <div>
-          <img src="/VoyageHub/src/main/resources/static/3.jpeg" alt="" />
+            <img src="/VoyageHub/src/main/resources/static/3.jpeg" alt=""/>
         </div>
         <div>
-          <img src="/VoyageHub/src/main/resources/static/4.webp" alt="" />
+            <img src="/VoyageHub/src/main/resources/static/4.webp" alt=""/>
         </div>
         <div>
-          <img src="/VoyageHub/src/main/resources/static/5.avif" alt="" />
+            <img src="/VoyageHub/src/main/resources/static/5.avif" alt=""/>
         </div>
-      </section>
-      <footer>
+    </section>
+    <div th:replace="fragments/footer :: footer"></div>
+    <footer>
         <ul>
-          <li>Terminos y Condiciones</li>
-          <li>Legales</li>
-          <li>Ayuda</li>
-          <li>Contacto</li>
-          <li>Nosotros</li>
+            <li>Terminos y Condiciones</li>
+            <li>Legales</li>
+            <li>Ayuda</li>
+            <li>Contacto</li>
+            <li>Nosotros</li>
         </ul>
-      </footer>
-    </main>
-  </body>
+    </footer>
+</main>
+</body>
 </html>
