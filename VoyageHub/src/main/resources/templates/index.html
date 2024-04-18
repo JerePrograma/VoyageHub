@@ -11,7 +11,7 @@
     />
     <!-- Asegúrate de que la ruta a los archivos estáticos sea relativa al directorio 'static' -->
     <!--"/VoyageHub/src/main/resources/static/style.css"-->
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <title>Agencia</title>
   </head>
   <body>
@@ -57,19 +57,19 @@
       <h2 class="cartasTitulo">DISFRUTÁ NUESTRAS PROMOCIONES</h2>
       <section class="cartas">
         <div>
-          <img src="/VoyageHub/src/main/resources/static/1.jpg" alt="" />
+          <img th:src="@{/images/1.jpeg}" alt="">
         </div>
         <div>
-          <img src="/VoyageHub/src/main/resources/static/2.jpeg" alt="" />
+          <img th:src="@{/images/2.jpeg}" alt=""> />
         </div>
         <div>
-          <img src="/VoyageHub/src/main/resources/static/3.jpeg" alt="" />
+          <img th:src="@{/images/3.jpeg}" alt="">
         </div>
         <div>
-          <img src="/VoyageHub/src/main/resources/static/4.webp" alt="" />
+          <img th:src="@{/images/4.webp}" alt="">
         </div>
         <div>
-          <img src="/VoyageHub/src/main/resources/static/5.avif" alt="" />
+          <img th:src="@{/images/5.avif}" alt="">
         </div>
       </section>
       <footer>

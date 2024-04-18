@@ -1,5 +1,6 @@
 .formulario {
-  width: 400px;
+width: 400px;
+display: table;
   padding: 30px;
   margin: auto;
   margin-top: 100px;
@@ -8,4 +9,7 @@
   box-shadow: 7px 13px 37px #000;
   padding-top: 5em;
   text-align: center;
+}
+.formulario input{
+display: inline;
 }
