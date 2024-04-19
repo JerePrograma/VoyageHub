@@ -1,7 +1,7 @@
 package ar.com.voyagehub.voyagehub.controladores;
 
 import ar.com.voyagehub.voyagehub.excepciones.MiExcepcion;
-import ar.com.voyagehub.voyagehub.servicios.ClienteServicio;
+import ar.com.voyagehub.voyagehub.servicios.EmpleadoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
@@ -15,10 +15,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.time.LocalDate;
 
 @Controller
-@RequestMapping("/cliente")
-public class ClienteControlador {
+@RequestMapping("/empleado")
+public class EmpleadoControlador {
     @Autowired
-    ClienteServicio clienteServicio;
+    EmpleadoServicio empleadoServicio;
 
     @GetMapping("/")
     public String usuarioList(Model model) {
@@ -27,7 +27,7 @@ public class ClienteControlador {
 
     @GetMapping("/registrar")
     public String registrar() {
-        return "cliente_form.html";
+        return "empleado_form.html";
     }
 
     @PostMapping("/registro")
@@ -42,9 +42,11 @@ public class ClienteControlador {
             @RequestParam("fechaNac") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fechaNac, // Asegúrate que la entrada del formulario sea en este formato
             @RequestParam("nacionalidad") String nacionalidad,
             @RequestParam("celular") String celular,
+            @RequestParam("cargo") String cargo,
+            @RequestParam("sueldo") Float sueldo,
             RedirectAttributes redirectAttributes) {
         try {
-            clienteServicio.crearCliente(nombre, apellido, email, contrasenia, contrasenia2, direccion, dni, fechaNac, nacionalidad, celular);
+            empleadoServicio.crearEmpleado(nombre, apellido, email, contrasenia, contrasenia2, direccion, dni, fechaNac, nacionalidad, celular, cargo, sueldo);
             redirectAttributes.addFlashAttribute("exito", "Usuario registrado correctamente");
             return "redirect:/login";
         } catch (MiExcepcion e) {
@@ -56,8 +58,9 @@ public class ClienteControlador {
             redirectAttributes.addFlashAttribute("dni", dni);
             redirectAttributes.addFlashAttribute("nacionalidad", nacionalidad);
             redirectAttributes.addFlashAttribute("celular", celular);
-
-            return "redirect:/cliente/registrar";
+            redirectAttributes.addFlashAttribute("cargo", cargo);
+            redirectAttributes.addFlashAttribute("sueldo", sueldo);
+            return "redirect:/empleado/registrar";
         }
     }
 }

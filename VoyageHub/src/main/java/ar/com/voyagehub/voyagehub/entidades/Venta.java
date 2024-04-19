@@ -14,10 +14,6 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numVenta;
 
-    @Column(columnDefinition = "TIMESTAMP")
-    private LocalDateTime fechaVenta;
-    private String medioPago;
-
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
@@ -27,7 +23,15 @@ public class Venta {
     private Empleado empleado;
 
     @ManyToOne
-    @JoinColumn(name = "producto_id")
-    private Producto producto;
+    @JoinColumn(name = "servicio_id")
+    private Servicio servicio;
 
+    @ManyToOne
+    @JoinColumn(name = "paquete_id")
+    private Paquete paquete;
+
+    @Column(name = "fecha_de_venta")
+    private LocalDateTime fechaVenta;
+    @Column(name = "medio_de_pago")
+    private String medioPago;
 }

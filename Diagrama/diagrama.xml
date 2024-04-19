@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-04-12T12:00:00.000Z" agent="Mozilla/5.0" etag="A_B_C_D_E" version="15.7.7" type="device">
+  <diagram id="Diagrama de Clases" name="Diagrama de Clases">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- Cliente -->
+        <mxCell id="2" value="Cliente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="200" height="180" as="geometry"/>
+        </mxCell>
+        <!-- Empleado -->
+        <mxCell id="3" value="Empleado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="300" y="160" width="200" height="200" as="geometry"/>
+        </mxCell>
+        <!-- Servicio Turístico -->
+        <mxCell id="4" value="Servicio Turístico" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="200" height="180" as="geometry"/>
+        </mxCell>
+        <!-- Paquete Turístico -->
+        <mxCell id="5" value="Paquete Turístico" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="400" width="200" height="180" as="geometry"/>
+        </mxCell>
+        <!-- Venta -->
+        <mxCell id="6" value="Venta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="540" y="280" width="200" height="180" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

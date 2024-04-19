@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/formularios.css}" />
+    <title>Registro de Servicio</title>
+  </head>
+  <body>
+    <form
+      class="formulario"
+      th:action="@{/servicio/registro}"
+      method="post"
+      enctype="multipart/form-data"
+      style="border-radius: 1.5rem"
+    >
+      <div
+        th:if="${error != null}"
+        class="card text-white bg-danger mb-3 mensajeError"
+      >
+        <div class="card-body">
+          <h5 class="card-title">Error</h5>
+          <p class="card-text" th:text="${error}"></p>
+        </div>
+      </div>
+      <div
+        th:if="${exito != null}"
+        class="card text-white bg-success mb-3 mensajeExito"
+      >
+        <div class="card-body">
+          <h5 class="card-title">Éxito!</h5>
+          <p class="card-text" th:text="${exito}"></p>
+        </div>
+      </div>
+      <h1><span class="badge badge-info">Registrar Servicio</span></h1>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="codigoServicio">Código de Servicio</label>
+          <input
+            type="number"
+            id="codigoServicio"
+            name="codigoServicio"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nombre">Nombre del Servicio</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="descripcionBreve">Descripción Breve</label>
+          <input
+            type="text"
+            id="descripcionBreve"
+            name="descripcionBreve"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="destinoServicio">Destino del Servicio</label>
+          <input
+            type="text"
+            id="destinoServicio"
+            name="destinoServicio"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="fechaServicio">Fecha del Servicio</label>
+          <input
+            type="date"
+            id="fechaServicio"
+            name="fechaServicio"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="costoServicio">Costo del Servicio</label>
+          <input
+            type="number"
+            step="0.01"
+            id="costoServicio"
+            name="costoServicio"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-info col-md-12"
+        style="margin-top: 20px"
+      >
+        Enviar Formulario
+      </button>
+      <div style="padding-top: 20px" class="divVolver">
+        <a th:href="@{/}" class="btn btn-dark my-2">Volver</a>
+      </div>
+    </form>
+  </body>
+</html>
