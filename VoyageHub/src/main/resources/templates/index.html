@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,9 +24,9 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav th:replace="fragments/navbar :: nav"></nav>
 
     <main>
+      <nav th:replace="fragments/navbar :: nav"></nav>
       <article class="principal">
         <section class="titulo">
           <button><p>Consultanos</p></button>
