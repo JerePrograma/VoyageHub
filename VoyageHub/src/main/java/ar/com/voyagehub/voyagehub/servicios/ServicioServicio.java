@@ -49,7 +49,10 @@ public class ServicioServicio {
                               String descripcionBreve,
                               String destinoServicio,
                               LocalDate fechaServicio,
-                              Float costoServicio) {
+                              Float costoServicio) throws MiExcepcion {
+        validarCadena(descripcionBreve, "La descripción no puede estar vacío ni ser nulo");
+        validarCadena(destinoServicio, "El destino no puede estar vacío ni ser nulo");
+        validarCadena(nombre, "El nombre no puede estar vacío ni ser nulo");
     }
 }
 
