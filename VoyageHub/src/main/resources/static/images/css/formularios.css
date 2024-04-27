@@ -1,0 +1,48 @@
+.formulario {
+  width: 600px;
+  padding: 30px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 4px;
+  font-family: "calibri";
+  box-shadow: 7px 13px 37px #000;
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+ /* Titulo centrado */
+.formulario h1 {
+  text-align: center;
+}
+
+/* Estilo para los labels con una sola línea */
+.formulario label {
+  display: inline-block;
+  width: 95px;
+  text-align: center;
+  margin-right: 20px;
+  height: auto; /* Altura automática para adaptarse al contenido de una sola línea */
+  vertical-align: middle; /* Centrar verticalmente el texto */
+  margin-bottom: 10px;
+}
+
+/* Estilo para los labels con más de una línea */
+.formulario label.multiline {
+  display: inline-block; /* Convertir a bloque para ocupar su propia línea */
+  width: 95px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 10px; /* Espacio entre los labels de múltiples líneas */
+}
+
+/* Estilo para los inputs */
+.formulario input {
+  width: calc(105% - 180px);
+  margin-bottom: 10px;
+  border-radius: 25px;
+  height: 3.2vh;
+}
+
+/* Estilo adicional para los botones */
+.formulario button {
+  width: 100%; /* Establece el ancho del botón al 100% */
+}
