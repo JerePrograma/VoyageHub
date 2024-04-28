@@ -7,6 +7,7 @@
     <title>Registro de Servicio</title>
   </head>
   <body>
+    <nav th:replace="~{fragments/navbar :: nav}"></nav>
     <form
       class="formulario"
       th:action="@{/servicio/registro}"
@@ -33,69 +34,56 @@
         </div>
       </div>
       <h1><span class="badge badge-info">Registrar Servicio</span></h1>
-
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label for="codigoServicio">Código de Servicio</label>
-          <input
-            type="number"
-            id="codigoServicio"
-            name="codigoServicio"
-            class="form-control"
-            required
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="nombre">Nombre del Servicio</label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            class="form-control"
-            required
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="descripcionBreve">Descripción Breve</label>
-          <input
-            type="text"
-            id="descripcionBreve"
-            name="descripcionBreve"
-            class="form-control"
-            required
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="destinoServicio">Destino del Servicio</label>
-          <input
-            type="text"
-            id="destinoServicio"
-            name="destinoServicio"
-            class="form-control"
-            required
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="fechaServicio">Fecha del Servicio</label>
-          <input
-            type="date"
-            id="fechaServicio"
-            name="fechaServicio"
-            class="form-control"
-            required
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="costoServicio">Costo del Servicio</label>
-          <input
-            type="number"
-            step="0.01"
-            id="costoServicio"
-            name="costoServicio"
-            class="form-control"
-            required
-          />
-        </div>
+      <div class="form-group col-md-6">
+        <label for="nombre">Nombre del Servicio</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="descripcionBreve">Descripción Breve</label>
+        <input
+          type="text"
+          id="descripcionBreve"
+          name="descripcionBreve"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="destinoServicio">Destino del Servicio</label>
+        <input
+          type="text"
+          id="destinoServicio"
+          name="destinoServicio"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="fechaServicio">Fecha del Servicio</label>
+        <input
+          type="date"
+          id="fechaServicio"
+          name="fechaServicio"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="costoServicio">Costo del Servicio</label>
+        <input
+          type="number"
+          step="0.01"
+          id="costoServicio"
+          name="costoServicio"
+          class="form-control"
+          required
+        />
       </div>
       <button
         type="submit"

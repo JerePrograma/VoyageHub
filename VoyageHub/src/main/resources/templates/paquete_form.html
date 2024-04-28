@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Crear Nuevo Paquete</title>
+  </head>
+  <body>
+    <h1>Crear Nuevo Paquete</h1>
+    <form th:action="@{/paquete/crear}" th:object="${paquete}" method="post">
+      <div>
+        <h3>Seleccionar Servicios:</h3>
+        <div th:each="servicio : ${todosLosServicios}">
+          <input
+            type="checkbox"
+            th:field="*{serviciosIncluidos}"
+            th:value="${servicio.codigoServicio}"
+          />
+          <label th:text="${servicio.nombre}"></label><br />
+        </div>
+      </div>
+      <button type="submit">Crear Paquete</button>
+    </form>
+  </body>
+</html>

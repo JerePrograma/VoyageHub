@@ -1,6 +1,7 @@
 package ar.com.voyagehub.voyagehub.servicios;
 
 import ar.com.voyagehub.voyagehub.entidades.Cliente;
+import ar.com.voyagehub.voyagehub.entidades.Empleado;
 import ar.com.voyagehub.voyagehub.enums.Rol;
 import ar.com.voyagehub.voyagehub.excepciones.MiExcepcion;
 import ar.com.voyagehub.voyagehub.repositorios.ClienteRepositorio;
@@ -13,12 +14,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClienteServicio implements UserDetailsService {
@@ -121,5 +124,57 @@ public class ClienteServicio implements UserDetailsService {
             throw new MiExcepcion("La contraseña no puede estar vacía, y debe tener más de 5 dígitos");
         }
     }
+    @Transactional(readOnly = true)
+    public Optional<Cliente> getOne(Long idCliente) {
+        return clienteRepositorio.findById(idCliente);
+    }
 
+    @Transactional(readOnly = true)
+    public List<Cliente> listarClientes() {
+        return clienteRepositorio.findAll();
+    }
+    @Transactional
+    public void eliminarCliente(Long idCliente) {
+        Optional<Cliente> respuesta = getOne(idCliente);
+        if (respuesta.isPresent()) {
+            Cliente cliente = respuesta.get();
+
+            clienteRepositorio.delete(cliente);
+        }
+    }
+//    @Transactional
+//    public void darBajaCliente(Long idCliente) {
+//        Optional<Cliente> respuesta = getOne(idCliente);
+//        if (respuesta.isPresent()) {
+//            Cliente cliente = respuesta.get();
+//            cliente.setAlta(false);
+//
+//            clienteRepositorio.save(cliente);
+//        }
+//    }
+
+//    @Transactional
+//    public void darAltaCliente(String idCodigoTributario) {
+//        Optional<Cliente> respuesta = ClienteRepositorio.findById(idCodigoTributario);
+//        if (respuesta.isPresent()) {
+//            Cliente cliente = respuesta.get();
+//            cliente.setAlta(true);
+//
+//            clienteRepositorio.save(cliente);
+//        }
+//    }
+//    public boolean existeClienteConDNI(String DNI) {
+//        // Implementa la lógica para buscar un Cliente por su DNI en la base de datos
+//        // Retorna true si el Cliente con ese DNI existe, de lo contrario, retorna false
+//        return ClienteRepositorio.existsByDNI(DNI); // Ajusta según tu modelo y repositorio
+//    }
+
+//    @Transactional(readOnly = true)
+//    public Cliente obtenerClientePorUsername(String username) throws MiExcepcion {
+//        Cliente Cliente = ClienteRepositorio.buscarPorEmail(username);
+//        if (Cliente == null) {
+//            throw new MiExcepcion("No se encontró un Cliente con el username: " + username);
+//        }
+//        return Cliente;
+//    }
 }

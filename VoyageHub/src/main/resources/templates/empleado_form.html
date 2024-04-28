@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro de Empleado</title>
     <link rel="stylesheet" th:href="@{/css/formularios.css}" />
+    <title>Registro de Empleado</title>
   </head>
   <body>
+  <nav th:replace="~{fragments/navbar :: nav}"></nav>
     <form
       class="formulario"
       th:action="@{/empleado/registro}"
