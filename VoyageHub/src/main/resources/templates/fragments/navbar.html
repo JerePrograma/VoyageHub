@@ -86,35 +86,35 @@
 
     <div>
       <div>
-        <label>Nombre</label>
         <input
                 name="nombre"
                 type="text"
                 placeholder="Ingrese su nombre"
                 th:value="${nombre != null ? nombre : ''}"
+                class="box"
                 required
         />
       </div>
       <div>
-        <label for="apellido">Apellido</label>
         <input
                 name="apellido"
                 id="apellido"
                 type="text"
                 placeholder="Ingrese su apellido"
                 th:value="${apellido != null ? apellido : ''}"
+                class="box"
                 required
         />
       </div>
     </div>
     <div>
-      <label for="InputEmail1" class="multiline">Correo Electrónico</label
-      >
       <input
               name="email"
               type="email"
+              placeholder="Ingrese su correo electronico"
               id="InputEmail1"
               th:value="${email != null ? email : ''}"
+              class="box"
               required
       />
 
@@ -126,69 +126,72 @@
 
     </div>
     <div>
-      <label for="InputPassword1"
-      >Ingrese su Contraseña</label
-      >
       <input
               name="contrasenia"
               type="password"
+              placeholder="Ingrese su contraseña"
               id="InputPassword1"
+              class="box"
               required
       />
     </div>
     <div>
-      <label for="InputPassword2"
-      >Repita su Contraseña</label
-      >
       <input
               name="contrasenia2"
               type="password"
+              placeholder="Ingrese nuevamente su contraseña"
               id="InputPassword2"
+              class="box"
               required
       />
     </div>
     <div>
-      <label>Dirección</label>
       <input
               name="direccion"
               type="text"
+              placeholder="Ingrese su dirección"
               th:value="${direccion != null ? direccion : ''}"
+              class="box"
               required
       />
     </div>
     <div>
-      <label>DNI</label>
       <input
               name="dni"
               type="text"
+              placeholder="Ingrese su DNI"
               th:value="${dni != null ? dni : ''}"
+              class="box"
               required
       />
     </div>
     <div>
-      <label>Fecha de Nacimiento</label>
       <input
               name="fechaNac"
               type="date"
+              placeholder="Ingrese su fecha de nacimiento"
               th:value="${fechaNac != null ? #dates.format(fechaNac, 'yyyy-MM-dd') : ''}"
+              class="box"
               required
       />
     </div>
     <div>
-      <label>Nacionalidad</label>
       <input
               name="nacionalidad"
               type="text"
+              placeholder="Ingrese su nacionalidad"
               th:value="${nacionalidad != null ? nacionalidad : ''}"
+              class="box"
               required
       />
     </div>
     <div>
-      <label>Celular</label>
       <input
               name="celular"
               type="tel"
+              placeholder="Ingrese su numero de celular"
               th:value="${celular != null ? celular : ''}"
+              class="box"
               required
       />
     </div>
@@ -199,7 +202,7 @@
     >
       Enviar Formulario
     </button>
-    <div style="padding-top: 20px" class="divVolver">
+    <div style="padding-top: 20px; text-align: center" class="divVolver">
       <a th:href="@{/}" class="btn btn-dark my-2">Volver</a>
     </div>
   </form>

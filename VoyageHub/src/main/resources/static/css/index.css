@@ -153,6 +153,7 @@ header .search-bar-container label:hover{
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: auto;
 }
 
 .login-form-container.active{
@@ -227,27 +228,33 @@ header .search-bar-container label:hover{
     cursor: pointer;
     }
 
-/* Estilos para el contenedor del formulario de registro */
-.register-form-container {
+.register-form-container{
     position:fixed;
-    left:70%
-    width: 600px;
-    padding: 30px;
-    margin-top: 100px;
+    top: -120%; left: 0;
+    z-index: 10000;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow-y: auto;
 }
 
-.register-form-container.active {
+.register-form-container.active{
     top: 0;
 }
 
-/* Estilos para el formulario de registro */
-.register-form-container form {
-    display: flex;
-    margin-right: 300px;
+
+.register-form-container form{
+    margin: 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: .5rem;
+    background: #fff;
+    width: 50rem;
 }
 
-.register-form-container form h1 {
+.register-form-container form h3{
     font-size: 3rem;
     color: #444;
     text-transform: uppercase;
@@ -255,66 +262,58 @@ header .search-bar-container label:hover{
     padding: 1rem 0;
 }
 
-.register-form-container form label {
-    font-size: 1.5rem;
-}
-
-.register-form-container form input[type="text"],
-.register-form-container form input[type="email"],
-.register-form-container form input[type="password"],
-.register-form-container form input[type="date"],
-.register-form-container form input[type="tel"] {
+.register-form-container form .box{
     width: 100%;
     padding: 1rem;
     font-size: 1.7rem;
     color: #333;
-    margin: 0.6rem 0;
-    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    margin: .6rem 0;
+    border: .1rem solid rgba(0, 0, 0, .3);
     text-transform: none;
 }
 
-.register-form-container form input[type="text"]:focus,
-.register-form-container form input[type="email"]:focus,
-.register-form-container form input[type="password"]:focus,
-.register-form-container form input[type="date"]:focus,
-.register-form-container form input[type="tel"]:focus {
+.register-form-container form .box:focus{
     border-color: var(--orange);
 }
 
-.register-form-container form .btn {
+.register-form-container form #remember{
+    margin: 2rem 0;
+
+}
+
+.register-form-container form label{
+    font-size: 1.5rem;
+}
+
+.register-form-container form .btn{
     display: block;
     width: 100%;
-    margin-top: 1rem;
 }
 
-.register-form-container form .btn-dark {
-    margin-top: 20px;
-}
-
-.register-form-container form p {
-    padding: 1.5rem 0;
+.register-form-container form p{
+    padding: 5rem 0;
     font-size: 1.5rem;
     color: #666;
 }
 
-.register-form-container form p a {
+.register-form-container form p a{
     color: var(--orange);
 }
 
-.register-form-container form p a:hover {
+.register-form-container form p a:hover{
     color: #333;
     text-decoration: underline;
 }
 
-/* Estilos para el botón de cerrar el formulario */
 .register-form-container #form-close {
-    position: absolute;
-    top: 2rem;
-    right: 3rem;
+    position:absolute;
+    top: 2rem; right: 3rem;
     font-size: 5rem;
-    color: #fff;
+    color:#fff;
     cursor: pointer;
-}
+    }
+
+
 
     #menu-bar{
         color: #fff;
