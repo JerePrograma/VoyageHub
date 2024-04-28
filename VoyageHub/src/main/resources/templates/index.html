@@ -1,74 +1,453 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html
+  lang="es"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns="http://www.w3.org/1999/xhtml"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Document</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <!--NO ESTABA IMPORTADO BOOTSTRAP, AAAAAAAAAAAAA-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-
-    <!-- Asegúrate de que la ruta a los archivos estáticos sea relativa al directorio 'static' -->
-    <!--"/VoyageHub/src/main/resources/static/style.css"-->
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
-    <title>Agencia</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
   </head>
+
   <body>
-    <!-- navbar -->
-    <nav th:replace="~{fragments/navbar :: nav}"></nav>
+    <header th:replace="fragments/navbar :: header"></header>
 
-    <main>
-      <article class="principal">
-        <section class="titulo">
-          <button><p>Consultanos</p></button>
-        </section>
+    <!-- SECCCION HOME COMIENZO-->
+    <section class="home" id="home">
+      <div class="content">
+        <h3>Nueva Aventura</h3>
+        <p>Lorem ipsum dolor sit amet consecte. delectus quod vel.</p>
+        <a th:href="@{/}" class="btn">Descubre más</a>
+      </div>
 
-        <section class="buscador">
-          <input type="text" placeholder="¿A dónde queres ir?" />
-          <div>
-            <input type="date" />
+      <div class="controls">
+        <span class="vid-btn active" data-src="../videos/r1.mp4"></span>
+        <span class="vid-btn" data-src="../videos/r2.mp4"></span>
+        <span class="vid-btn" data-src="../videos/r3.mp4}"></span>
+        <span class="vid-btn" data-src="../videos/r4.mp4"></span>
+        <span class="vid-btn" data-src="../videos/r5.mp4"></span>
+      </div>
+
+      <div class="video-container">
+        <video src="../videos/r1.mp4" id="video-slider" loop autoplay></video>
+      </div>
+    </section>
+    <!-- SECCCION HOME FINAL-->
+
+    <!-- SECCCION COMPRAR/BOOKING COMIENZO-->
+    <section class="book" id="book">
+      <h1 class="heading">
+        <span>R</span>
+        <span>e</span>
+        <span>s</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>a</span>
+        <span>s</span>
+      </h1>
+
+      <div class="row">
+        <div class="image">
+          <img th:src="@{/images/img1.jpg}" alt="" />
+        </div>
+
+        <form action="">
+          <div class="inputBox">
+            <h3>Servicio/Paquete</h3>
+            <input type="text" placeholder="introduzca el nombre " />
+          </div>
+
+          <div class="inputBox">
+            <h3>Cantidad de personas</h3>
+            <input type="number" placeholder="cantidad" />
+          </div>
+
+          <div class="inputBox">
+            <h3>Desde</h3>
             <input type="date" />
           </div>
-          <button><p>Buscar</p></button>
-        </section>
-      </article>
 
-      <h2 class="cartasTitulo">DISFRUTÁ NUESTRAS PROMOCIONES</h2>
-      <section class="cartas">
-        <div>
-          <img th:src="@{/images/1.jpg}" alt="" />
+          <div class="inputBox">
+            <h3>Hasta</h3>
+            <input type="date" />
+          </div>
+          <input type="Enviar" class="btn" value="reservar ya!" />
+        </form>
+      </div>
+    </section>
+    <!-- SECCCION RESERVA/BOOKING FINAL-->
+
+    <!-- SECCCION PAQUETES COMIENZO-->
+    <section class="packages" id="packages">
+      <h1 class="heading">
+        <span>p</span>
+        <span>a</span>
+        <span>q</span>
+        <span>u</span>
+        <span>e</span>
+        <span>t</span>
+        <span>e</span>
+        <span>s</span>
+      </h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img th:src="@{/images/img2.jpg}" alt="" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i>PACK 1</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consec elit. Consequuntur dolore
+              suscipit en molestiae.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">$999 <span>$1200</span></div>
+            <a href="#" class="btn">comprar</a>
+          </div>
         </div>
-        <div>
-          <img th:src="@{/images/2.jpeg}" alt="" />
+
+        <div class="box">
+          <img th:src="@{/images/img3.jpg}" alt="" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i>PACK 2</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consec elit. Consequuntur dolore
+              suscipit en molestiae.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">$999 <span>$1200</span></div>
+            <a href="#" class="btn">comprar</a>
+          </div>
         </div>
-        <div>
-          <img th:src="@{/images/3.jpeg}" alt="" />
+
+        <div class="box">
+          <img th:src="@{/images/img4.jpg}" alt="" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i>PACK 3</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consec elit. Consequuntur dolore
+              suscipit en molestiae.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">$999 <span>$1200</span></div>
+            <a href="#" class="btn">comprar</a>
+          </div>
         </div>
-        <div>
-          <img th:src="@{/images/4.webp}" alt="" />
+
+        <div class="box">
+          <img th:src="@{/images/img5.jpg}" alt="" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i>PACK 4</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consec elit. Consequuntur dolore
+              suscipit en molestiae.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">$999 <span>$1200</span></div>
+            <a href="#" class="btn">comprar</a>
+          </div>
         </div>
-        <div>
-          <img th:src="@{/images/5.avif}" alt="" />
+
+        <div class="box">
+          <img th:src="@{/images/img6.jpg}" alt="" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i>PACK 5</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consec elit. Consequuntur dolore
+              suscipit en molestiae.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">$999 <span>$1200</span></div>
+            <a href="#" class="btn">comprar</a>
+          </div>
         </div>
-      </section>
-      <footer>
-        <ul>
-          <li>Terminos y Condiciones</li>
-          <li>Legales</li>
-          <li>Ayuda</li>
-          <li>Contacto</li>
-          <li>Nosotros</li>
-        </ul>
-      </footer>
-    </main>
+
+        <div class="box">
+          <img th:src="@{/images/img7.jpg}" alt="" />
+          <div class="content">
+            <h3><i class="fas fa-map-marker-alt"></i>PACK 6</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consec elit. Consequuntur dolore
+              suscipit en molestiae.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">$999 <span>$1200</span></div>
+            <a href="#" class="btn">comprar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECCCION PAQUETES FINAL-->
+
+    <!-- SECCCION SERVICIOS COMIENZO-->
+    <section class="services" id="services">
+      <h1 class="heading">
+        <span>s</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>i</span>
+        <span>c</span>
+        <span>i</span>
+        <span>o</span>
+        <span>s</span>
+      </h1>
+
+      <div class="box-container">
+        <div class="box">
+          <i class="fas fa-car-alt"></i>
+          <h3>Alquiler de autos</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+            quibusdam, sed quidem,nobis sint labore minima
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-plane"></i>
+          <h3>Pasajes de Avion</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+            quibusdam, sed quidem,nobis sint labore minima
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-bus"></i>
+          <h3>Pasajes Omnibus</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+            quibusdam, sed quidem,nobis sint labore minima
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- SECCCION SERVICIOS FINAL-->
+
+    <!-- SECCCION GALERIA INICIO-->
+
+    <section class="gallery" id="gallery">
+      <h1 class="heading">
+        <span>g</span>
+        <span>a</span>
+        <span>l</span>
+        <span>e</span>
+        <span>r</span>
+        <span>i</span>
+        <span>a</span>
+      </h1>
+      <div class="box-container">
+        <div class="box">
+          <img th:src="@{/images/galeria1.jpeg}" alt="" />
+          <div class="content">
+            <h3>lugares inrecibles</h3>
+            <p>Lorem ipsoluptatem adipisci consequatur laudantium.</p>
+            <a href="#" class="btn"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img th:src="@{/images/galeria2.jpg}" alt="" />
+          <div class="content">
+            <h3>lugares inrecibles</h3>
+            <p>Lorem ipsoluptatem adipisci consequatur laudantium.</p>
+            <a href="#" class="btn"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img th:src="@{/images/galeria3.jpg}" alt="" />
+          <div class="content">
+            <h3>lugares increibles</h3>
+            <p>Lorem ipsoluptatem adipisci consequatur laudantium.</p>
+            <a href="#" class="btn"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img th:src="@{/images/galeria4.jpg}" alt="" />
+          <div class="content">
+            <h3>lugares increibles</h3>
+            <p>Lorem ipsoluptatem adipisci consequatur laudantium.</p>
+            <a href="#" class="btn"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img th:src="@{/images/galeria5.jpg}" alt="" />
+          <div class="content">
+            <h3>lugares increibles</h3>
+            <p>Lorem ipsoluptatem adipisci consequatur laudantium.</p>
+            <a href="#" class="btn"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img th:src="@{/images/galeria6.jpg}" alt="" />
+          <div class="content">
+            <h3>lugares increibles</h3>
+            <p>Lorem ipsoluptatem adipisci consequatur laudantium.</p>
+            <a href="#" class="btn"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img th:src="@{/images/galeria7.jpg}" alt="" />
+          <div class="content">
+            <h3>lugares increibles</h3>
+            <p>Lorem ipsoluptatem adipisci consequatur laudantium.</p>
+            <a href="#" class="btn"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img th:src="@{/images/galeria8.jpeg}" alt="" />
+          <div class="content">
+            <h3>lugares increibles</h3>
+            <p>Lorem ipsoluptatem adipisci consequatur laudantium.</p>
+            <a href="#" class="btn"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img th:src="@{/images/galeria9.jpg}" alt="" />
+          <div class="content">
+            <h3>lugares increibles</h3>
+            <p>Lorem ipsoluptatem adipisci consequatur laudantium.</p>
+            <a href="#" class="btn"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECCCION SERVICIOS FINAL-->
+
+    <!-- SECCCION CONTACTO INICIO-->
+    <section class="contact">
+      <h1 class="heading">
+        <span>c</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
+        <span>c</span>
+        <span>t</span>
+        <span>0</span>
+      </h1>
+
+      <div class="row">
+        <div class="image">
+          <img th:src="@{/images/contacto.jpg}" alt="" />
+        </div>
+
+        <form action="">
+          <div class="inputBox">
+            <input type="text" placeholder="nombre" />
+            <input type="text" placeholder="email" />
+          </div>
+
+          <div class="inputBox">
+            <input type="number" placeholder="numero" />
+            <input type="text" placeholder="texto" />
+          </div>
+
+          <textarea placeholder="mensaje" id="" cols="30" rows="10"></textarea>
+          <input type="submit" class="btn" value="enviar mensaje" />
+        </form>
+      </div>
+    </section>
+    <!-- SECCCION CONTACTO FINAL-->
+
+    <!-- SECCCION FOOTER FINAL-->
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>sobre nosotros</h3>
+          <p>
+            Lorem ipsum dolor, sisquam beatae quibusdam eligendi facilis ea ipsa
+            id ex aut nisi earum nam repudiandae, impedit laudantium? Voluptate.
+          </p>
+        </div>
+
+        <div class="box">
+          <h3>Nuestras Oficinas</h3>
+          <a href="">Buenos Aires</a>
+          <a href="">Mendoza</a>
+          <a href="">Cordoba</a>
+        </div>
+
+        <div class="box">
+          <h3>links rapidos</h3>
+          <a href="">home</a>
+          <a href="">reservas</a>
+          <a href="">paquetes</a>
+          <a href="">servicios</a>
+          <a href="">galeria</a>
+          <a href="">contactos</a>
+        </div>
+
+        <div class="box">
+          <h3>siguenos</h3>
+          <a href="">facebook</a>
+          <a href="">instagram</a>
+          <a href="">twitter</a>
+          <a href="">linkedin</a>
+        </div>
+      </div>
+      <h1 class="credit">
+        created by <span>archiDesigner</span>@all rigths reserved
+      </h1>
+    </section>
+
+    <!-- SECCCION FOOTER FINAL-->
+
+    <script th:src="@{/js/script.js}"></script>
   </body>
 </html>
