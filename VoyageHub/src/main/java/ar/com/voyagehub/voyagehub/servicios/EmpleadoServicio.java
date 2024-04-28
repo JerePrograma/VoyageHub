@@ -8,8 +8,11 @@ import ar.com.voyagehub.voyagehub.repositorios.ClienteRepositorio;
 import ar.com.voyagehub.voyagehub.repositorios.EmpleadoRepositorio;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmpleadoServicio extends ClienteServicio {
@@ -49,5 +52,24 @@ public class EmpleadoServicio extends ClienteServicio {
         empleado.setSueldo(sueldo);
         empleado.setRol(Rol.EMPLEADO);
         empleadoRepositorio.save(empleado);
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<Empleado> getOneEmpleado(Long idEmpleado) {
+        return empleadoRepositorio.findById(idEmpleado);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Empleado> listarEmpleados() {
+        return empleadoRepositorio.findAll();
+    }
+    @Transactional
+    public void eliminarEmpleado(Long idEmpleado) {
+        Optional<Empleado> respuesta = getOneEmpleado(idEmpleado);
+        if (respuesta.isPresent()) {
+            Empleado empleado = respuesta.get();
+
+            empleadoRepositorio.delete(empleado);
+        }
     }
 }

@@ -30,15 +30,14 @@ public class ServicioControlador {
     }
 
     @PostMapping("/registro")
-    public String registro(@RequestParam("codigoServicio") Long codigoServicio,
-                           @RequestParam("nombre") String nombre,
+    public String registro(@RequestParam("nombre") String nombre,
                            @RequestParam("descripcionBreve") String descripcionBreve,
                            @RequestParam("destinoServicio") String destinoServicio,
                            @RequestParam("fechaServicio") LocalDate fechaServicio,
                            @RequestParam("costoServicio") Float costoServicio,
                            RedirectAttributes redirectAttributes) {
         try {
-            servicioServicio.crearServicio(codigoServicio, nombre, descripcionBreve, destinoServicio, fechaServicio, costoServicio);
+            servicioServicio.crearServicio(nombre, descripcionBreve, destinoServicio, fechaServicio, costoServicio);
             redirectAttributes.addFlashAttribute("exito", "Servicio registrado correctamente");
             return "redirect:/";
         } catch (MiExcepcion e) {

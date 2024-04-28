@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Editar Paquete</title>
+  </head>
+  <body>
+  <nav th:replace="~{fragments/navbar :: nav}"></nav>
+    <h1>Editar Paquete</h1>
+
+    <form th:action="@{/paquete/update}" th:object="${paquete}" method="post">
+      <div>
+        <label for="nombre">Nombre del Paquete:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" required />
+      </div>
+      <div>
+        <h3>Servicios Incluidos:</h3>
+        <div th:each="servicio : ${todosLosServicios}">
+          <input
+            type="checkbox"
+            th:field="*{serviciosIncluidos}"
+            th:value="${servicio.codigoServicio}"
+            th:checked="${paquete.serviciosIncluidos.contains(servicio)}"
+          />
+          <label th:text="${servicio.nombre}"></label>
+        </div>
+      </div>
+      <button type="submit">Guardar Cambios</button>
+    </form>
+  </body>
+</html>

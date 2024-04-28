@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" th:href="@{/css/formularios.css}" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-          crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <title>Registro de Usuario</title>
   </head>
   <body>
+  <nav th:replace="~{fragments/navbar :: nav}"></nav>
+
     <form
       class="formulario"
       th:action="@{/cliente/registro}"
@@ -62,8 +67,7 @@
         </div>
       </div>
       <div>
-        <label for="InputEmail1" class="multiline">Correo Electrónico</label
-        >
+        <label for="InputEmail1" class="multiline">Correo Electrónico</label>
         <input
           name="email"
           type="email"
@@ -72,17 +76,15 @@
           required
         />
 
-        <br>
+        <br />
         <div class="d-flex justify-content-center">
-          <p class="mb-1 bg-info"><small>Nunca compartiremos con nadie su datos personales.
-            </small></p>
+          <p class="mb-1 bg-info">
+            <small>Nunca compartiremos con nadie su datos personales. </small>
+          </p>
         </div>
-
       </div>
       <div>
-        <label for="InputPassword1"
-          >Ingrese su Contraseña</label
-        >
+        <label for="InputPassword1">Ingrese su Contraseña</label>
         <input
           name="contrasenia"
           type="password"
@@ -91,9 +93,7 @@
         />
       </div>
       <div>
-        <label for="InputPassword2"
-          >Repita su Contraseña</label
-        >
+        <label for="InputPassword2">Repita su Contraseña</label>
         <input
           name="contrasenia2"
           type="password"
@@ -146,11 +146,7 @@
           required
         />
       </div>
-      <button
-        type="submit"
-        class="btn btn-info"
-        style="margin-top: 20px"
-      >
+      <button type="submit" class="btn btn-info" style="margin-top: 20px">
         Enviar Formulario
       </button>
       <div style="padding-top: 20px" class="divVolver">

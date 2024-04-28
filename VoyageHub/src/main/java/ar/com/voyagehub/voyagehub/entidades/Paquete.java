@@ -16,7 +16,7 @@ public class Paquete {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigoPaquete;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(
             name = "paquete_servicios",
             joinColumns = @JoinColumn(name = "codigo_paquete"),
@@ -24,11 +24,12 @@ public class Paquete {
     )
     private List<Servicio> serviciosIncluidos = new ArrayList<>();
 
-
     public Float getCostoPaquete() {
         if (serviciosIncluidos != null && !serviciosIncluidos.isEmpty()) {
-            float sumaCostos = serviciosIncluidos.stream().map(Servicio::getCostoServicio).reduce(0f, Float::sum);
-            return sumaCostos - sumaCostos * 0.10f;
+            float sumaCostos = serviciosIncluidos.stream()
+                    .map(Servicio::getCostoServicio)
+                    .reduce(0f, Float::sum);
+            return sumaCostos - sumaCostos * 0.10f; // Aplicar el descuento del 10%
         }
         return 0f;
     }

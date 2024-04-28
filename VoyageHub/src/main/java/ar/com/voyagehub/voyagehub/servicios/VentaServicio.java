@@ -10,8 +10,12 @@ import java.time.LocalDate;
 
 @Service
 public class VentaServicio {
-    @Autowired
+    final
     VentaRepositorio ventaRepositorio;
+
+    public VentaServicio(VentaRepositorio ventaRepositorio) {
+        this.ventaRepositorio = ventaRepositorio;
+    }
 
     public void crearVenta(String nombre,
                            Long numVenta,
