@@ -4,6 +4,7 @@
     <title>Crear Nuevo Paquete</title>
   </head>
   <body>
+  <nav th:replace="~{fragments/navbar :: nav}"></nav>
     <h1>Crear Nuevo Paquete</h1>
     <form th:action="@{/paquete/crear}" th:object="${paquete}" method="post">
       <div>

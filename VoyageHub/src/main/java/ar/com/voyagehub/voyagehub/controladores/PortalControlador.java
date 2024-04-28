@@ -26,9 +26,10 @@ public class PortalControlador {
     @GetMapping("/")
     public String index(ModelMap modelo, HttpSession session) {
 
-        Cliente cliente = (Cliente) session.getAttribute("clientesession");
-
-        modelo.put("cliente", cliente);
+        Cliente cliente = (Cliente) session.getAttribute("usuariosession");
+        if(cliente != null){
+            modelo.put("cliente", cliente);
+        }
         return "index.html";
     }
 
@@ -40,10 +41,10 @@ public class PortalControlador {
         return "login.html";
     }
 
-    @PreAuthorize("hasAnyRole('ROLE_CLIENTE','ROLE_EMPLEADO', 'ROLE_ADMIN')")
+//    @PreAuthorize("hasAnyRole('ROLE_CLIENTE','ROLE_EMPLEADO', 'ROLE_ADMIN')")
     @GetMapping("/inicio")
     public String inicio(ModelMap modelo, HttpSession session) {
-        Cliente cliente = (Cliente) session.getAttribute("clientesession");
+        Cliente cliente = (Cliente) session.getAttribute("usuariosession");
         if (cliente == null) {
             return "redirect:/login";
         }

@@ -4,6 +4,7 @@
     <title>Editar Paquete</title>
   </head>
   <body>
+  <nav th:replace="~{fragments/navbar :: nav}"></nav>
     <h1>Editar Paquete</h1>
 
     <form th:action="@{/paquete/update}" th:object="${paquete}" method="post">
